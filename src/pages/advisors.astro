@@ -1,0 +1,619 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const advisors = [
+  {
+    name: "Advisor Name",
+    title: "Industry Expert",
+    description: "Leverages 20+ years of executive relationships to open doors at Fortune 500 companies, ensuring our clients connect with decision-makers who matter.",
+  },
+  {
+    name: "Advisor Name",
+    title: "Strategic Partner",
+    description: "Brings deep connections in the technology sector, facilitating introductions to CTOs and VPs of Engineering at high-growth startups.",
+  },
+  {
+    name: "Advisor Name",
+    title: "Network Catalyst",
+    description: "Specializes in private equity and venture capital relationships, connecting our clients with investors and portfolio company executives.",
+  },
+  {
+    name: "Advisor Name",
+    title: "Growth Advisor",
+    description: "Maintains relationships with marketing and sales leaders across SaaS companies, providing warm introductions that accelerate deal cycles.",
+  },
+  {
+    name: "Advisor Name",
+    title: "Enterprise Connector",
+    description: "Former C-suite executive with an extensive network in healthcare and fintech, opening pathways to enterprise accounts.",
+  },
+];
+---
+
+<Layout title="Our Advisors - JoltGrowth" description="Meet the trusted advisors who help JoltGrowth clients connect with decision-makers.">
+  <main>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="container">
+        <div class="nav-content">
+          <a href="/" class="logo">
+            <span class="logo-text">Jolt</span><span class="logo-accent">Growth</span>
+          </a>
+          <div class="nav-links">
+            <a href="/#services">Services</a>
+            <a href="/advisors" class="active">Advisors</a>
+            <a href="/#contact" class="btn-primary">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">Our Advisors</h1>
+          <p class="hero-subtitle">
+            A curated network of industry leaders who open doors that others can't.
+          </p>
+        </div>
+      </div>
+
+      <!-- Trust Graphic -->
+      <div class="trust-graphic">
+        <div class="trust-ring trust-ring-1"></div>
+        <div class="trust-ring trust-ring-2"></div>
+        <div class="trust-ring trust-ring-3"></div>
+        <div class="trust-center">
+          <svg viewBox="0 0 100 100" class="trust-icon">
+            <path d="M50 10 L90 30 L90 50 C90 75 70 90 50 95 C30 90 10 75 10 50 L10 30 Z"
+                  fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M35 50 L45 60 L65 40"
+                  fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="trust-nodes">
+          <div class="node node-1"></div>
+          <div class="node node-2"></div>
+          <div class="node node-3"></div>
+          <div class="node node-4"></div>
+          <div class="node node-5"></div>
+          <div class="node node-6"></div>
+        </div>
+        <svg class="trust-connections" viewBox="0 0 400 400">
+          <line x1="200" y1="200" x2="200" y2="50" class="connection"/>
+          <line x1="200" y1="200" x2="330" y2="125" class="connection"/>
+          <line x1="200" y1="200" x2="330" y2="275" class="connection"/>
+          <line x1="200" y1="200" x2="200" y2="350" class="connection"/>
+          <line x1="200" y1="200" x2="70" y2="275" class="connection"/>
+          <line x1="200" y1="200" x2="70" y2="125" class="connection"/>
+        </svg>
+      </div>
+
+      <div class="hero-gradient"></div>
+    </section>
+
+    <!-- Advisors Section -->
+    <section class="advisors-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Trusted Connections</h2>
+          <p class="section-subtitle">
+            Each advisor brings decades of relationships and a commitment to making meaningful introductions.
+          </p>
+        </div>
+
+        <div class="advisors-grid">
+          {advisors.map((advisor, index) => (
+            <div class="advisor-card">
+              <div class="advisor-image">
+                <div class="image-placeholder">
+                  <svg viewBox="0 0 80 80" fill="currentColor">
+                    <circle cx="40" cy="30" r="14"/>
+                    <path d="M15 70 C15 50 25 42 40 42 C55 42 65 50 65 70"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="advisor-info">
+                <h3 class="advisor-name">{advisor.name}</h3>
+                <p class="advisor-title">{advisor.title}</p>
+                <p class="advisor-description">{advisor.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2 class="cta-title">Ready to Access Our Network?</h2>
+          <p class="cta-subtitle">
+            Let our advisors open doors to the connections that will transform your business.
+          </p>
+          <a href="/#contact" class="btn-primary btn-large">Schedule a Consultation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <a href="/" class="logo">
+              <span class="logo-text">Jolt</span><span class="logo-accent">Growth</span>
+            </a>
+            <p class="footer-tagline">Accelerating business growth worldwide.</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Services</h4>
+              <ul>
+                <li><a href="/#services">Cold Email</a></li>
+                <li><a href="/#services">Lead Generation</a></li>
+                <li><a href="/#services">Consulting</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="/advisors">Our Advisors</a></li>
+                <li><a href="/#contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Legal</h4>
+              <ul>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/terms">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 JoltGrowth. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Navigation */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-display);
+  }
+
+  .logo-text { color: var(--color-text); }
+  .logo-accent { color: var(--color-accent); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:not(.btn-primary):hover,
+  .nav-links a.active {
+    color: var(--color-accent-light);
+  }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    border: none;
+    background: var(--color-accent);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+  }
+
+  .btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 4rem 0;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+  }
+
+  .hero-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Trust Graphic */
+  .trust-graphic {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 400px;
+    z-index: 1;
+  }
+
+  .trust-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+  }
+
+  .trust-ring-1 {
+    width: 150px;
+    height: 150px;
+    animation: pulse-ring 4s ease-in-out infinite;
+  }
+
+  .trust-ring-2 {
+    width: 250px;
+    height: 250px;
+    animation: pulse-ring 4s ease-in-out infinite 0.5s;
+  }
+
+  .trust-ring-3 {
+    width: 350px;
+    height: 350px;
+    animation: pulse-ring 4s ease-in-out infinite 1s;
+  }
+
+  @keyframes pulse-ring {
+    0%, 100% {
+      opacity: 0.3;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+  }
+
+  .trust-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-accent);
+  }
+
+  .trust-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--color-accent-light);
+  }
+
+  .trust-connections {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .connection {
+    stroke: rgba(99, 102, 241, 0.3);
+    stroke-width: 1;
+    stroke-dasharray: 5, 5;
+    animation: dash 20s linear infinite;
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: -100;
+    }
+  }
+
+  .trust-nodes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .node {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+  }
+
+  .node-1 { top: 12%; left: 50%; transform: translateX(-50%); }
+  .node-2 { top: 31%; right: 17%; }
+  .node-3 { bottom: 31%; right: 17%; }
+  .node-4 { bottom: 12%; left: 50%; transform: translateX(-50%); }
+  .node-5 { bottom: 31%; left: 17%; }
+  .node-6 { top: 31%; left: 17%; }
+
+  /* Advisors Section */
+  .advisors-section {
+    padding: 6rem 0;
+    background: var(--color-bg-secondary);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .advisors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .advisor-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .advisor-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-accent);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .advisor-image {
+    margin-bottom: 1.5rem;
+  }
+
+  .image-placeholder {
+    width: 120px;
+    height: 120px;
+    background: var(--color-bg-tertiary);
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    border: 2px dashed var(--color-border);
+  }
+
+  .image-placeholder svg {
+    width: 60px;
+    height: 60px;
+    opacity: 0.5;
+  }
+
+  .advisor-info {
+    flex: 1;
+  }
+
+  .advisor-name {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-text);
+  }
+
+  .advisor-title {
+    font-size: 0.875rem;
+    color: var(--color-accent-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+
+  .advisor-description {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+
+  /* CTA Section */
+  .cta {
+    padding: 6rem 0;
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .cta-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 4rem 0 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-brand { max-width: 300px; }
+
+  .footer-tagline {
+    margin-top: 1rem;
+    color: var(--color-text-secondary);
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-column h4 {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    color: var(--color-text-secondary);
+  }
+
+  .footer-column ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-column a {
+    color: var(--color-text-secondary);
+    transition: color 0.2s;
+  }
+
+  .footer-column a:hover {
+    color: var(--color-accent-light);
+  }
+
+  .footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 968px) {
+    .trust-graphic {
+      display: none;
+    }
+
+    .hero-content {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links a:not(.btn-primary):not(.active) {
+      display: none;
+    }
+
+    .advisors-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .footer-links {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
