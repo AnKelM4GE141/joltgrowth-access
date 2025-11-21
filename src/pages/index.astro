@@ -53,6 +53,11 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
       <div class="hero-gradient"></div>
+
+      <!-- Retro Waves -->
+      <div class="retro-waves">
+        <canvas id="retro-wave-canvas"></canvas>
+      </div>
     </section>
 
     <!-- Services Section -->
@@ -340,10 +345,29 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+    background: linear-gradient(
+      90deg,
+      var(--color-accent) 0%,
+      var(--color-accent-light) 25%,
+      #a5b4fc 50%,
+      var(--color-accent-light) 75%,
+      var(--color-accent) 100%
+    );
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: shimmer 8s linear infinite;
+    position: relative;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
   }
 
   .hero-subtitle {
@@ -399,6 +423,107 @@ import Layout from '../layouts/Layout.astro';
     height: 800px;
     background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
     pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Retro Waves */
+  .retro-waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #retro-wave-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Floating Gradient Orbs */
+  .orbs-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    mix-blend-mode: screen;
+  }
+
+  .orb-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%);
+    top: 10%;
+    left: -10%;
+    animation: float-1 20s ease-in-out infinite;
+  }
+
+  .orb-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.4) 0%, transparent 70%);
+    top: 60%;
+    right: -5%;
+    animation: float-2 25s ease-in-out infinite;
+    animation-delay: -5s;
+  }
+
+  .orb-3 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+    bottom: -20%;
+    left: 30%;
+    animation: float-3 30s ease-in-out infinite;
+    animation-delay: -10s;
+  }
+
+  @keyframes float-1 {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+
+  @keyframes float-2 {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(-40px, 30px) scale(1.15);
+    }
+    66% {
+      transform: translate(30px, -20px) scale(0.85);
+    }
+  }
+
+  @keyframes float-3 {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(-50px, -50px) scale(1.2);
+    }
   }
 
   /* Services Section */
@@ -667,3 +792,114 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 </style>
+
+<script>
+  // Retro Wave Animation
+  const canvas = document.getElementById('retro-wave-canvas') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d')!;
+
+  let animationId: number;
+  let time = 0;
+
+  function resizeCanvas() {
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * window.devicePixelRatio;
+    canvas.height = rect.height * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+
+  function drawRetroWaves() {
+    const width = canvas.width / window.devicePixelRatio;
+    const height = canvas.height / window.devicePixelRatio;
+
+    // Clear canvas
+    ctx.clearRect(0, 0, width, height);
+
+    // Perspective settings
+    const horizonY = height * 0.4; // Horizon line position
+    const gridLines = 40;
+    const gridSpacing = 30;
+    const waveDepth = 25; // Depth of perspective
+
+    // Draw horizontal grid lines (waves)
+    for (let i = 0; i < gridLines; i++) {
+      const z = i / gridLines;
+      const scale = 1 - z * 0.8; // Perspective scaling
+      const y = horizonY + (i * gridSpacing * scale);
+
+      if (y > height) break;
+
+      // Wave effect with time animation
+      const waveOffset = Math.sin(time * 0.001 + i * 0.1) * 20 * scale;
+      const waveOffset2 = Math.cos(time * 0.0015 + i * 0.15) * 15 * scale;
+
+      ctx.beginPath();
+
+      // Draw wavy line
+      for (let x = 0; x <= width; x += 5) {
+        const xPos = (x - width / 2) * (1 + z * 0.5) + width / 2;
+        const wave = Math.sin(x * 0.01 + time * 0.002 + i * 0.2) * waveDepth * scale + waveOffset + waveOffset2;
+        const yPos = y + wave;
+
+        if (x === 0) {
+          ctx.moveTo(xPos, yPos);
+        } else {
+          ctx.lineTo(xPos, yPos);
+        }
+      }
+
+      // Gradient color based on depth
+      const alpha = 0.15 + (1 - z) * 0.35;
+      const hue = 240 + z * 20; // Blue to purple gradient
+      ctx.strokeStyle = `hsla(${hue}, 100%, 65%, ${alpha})`;
+      ctx.lineWidth = 1 + (1 - z) * 1.5;
+      ctx.stroke();
+    }
+
+    // Draw vertical grid lines
+    const verticalLines = 30;
+    for (let i = -verticalLines; i <= verticalLines; i++) {
+      ctx.beginPath();
+
+      const startZ = 0;
+      const endZ = 1;
+
+      for (let z = startZ; z <= endZ; z += 0.02) {
+        const scale = 1 - z * 0.8;
+        const x = (i * 30 * (1 + z * 0.5)) + width / 2;
+        const y = horizonY + (z * gridLines * gridSpacing * scale);
+
+        // Add wave effect to vertical lines
+        const wave = Math.sin(y * 0.01 + time * 0.002) * 10 * scale;
+
+        if (z === startZ) {
+          ctx.moveTo(x + wave, y);
+        } else {
+          ctx.lineTo(x + wave, y);
+        }
+      }
+
+      const alpha = 0.1;
+      ctx.strokeStyle = `hsla(240, 100%, 65%, ${alpha})`;
+      ctx.lineWidth = 0.5;
+      ctx.stroke();
+    }
+
+    time += 16;
+    animationId = requestAnimationFrame(drawRetroWaves);
+  }
+
+  // Initialize
+  resizeCanvas();
+  drawRetroWaves();
+
+  // Handle resize
+  window.addEventListener('resize', () => {
+    resizeCanvas();
+  });
+
+  // Cleanup on page unload
+  window.addEventListener('beforeunload', () => {
+    cancelAnimationFrame(animationId);
+  });
+</script>
