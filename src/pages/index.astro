@@ -58,6 +58,13 @@ import Layout from '../layouts/Layout.astro';
       <div class="retro-waves">
         <canvas id="retro-wave-canvas"></canvas>
       </div>
+
+      <!-- Ambient Light Orbs -->
+      <div class="ambient-lights">
+        <div class="light light-1"></div>
+        <div class="light light-2"></div>
+        <div class="light light-3"></div>
+      </div>
     </section>
 
     <!-- Services Section -->
@@ -442,6 +449,135 @@ import Layout from '../layouts/Layout.astro';
     width: 100%;
     height: 100%;
     display: block;
+  }
+
+  /* Ambient Light Orbs */
+  .ambient-lights {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .light {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px);
+  }
+
+  .light-1 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
+    top: 5%;
+    right: 10%;
+    animation: drift-1 16s ease-in-out infinite;
+  }
+
+  .light-2 {
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    top: 18%;
+    right: 30%;
+    animation: drift-2 20s ease-in-out infinite;
+  }
+
+  .light-3 {
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    top: 10%;
+    right: 5%;
+    animation: drift-3 18s ease-in-out infinite;
+  }
+
+  @keyframes drift-1 {
+    0%, 100% {
+      opacity: 0.02;
+      transform: translate(0, 0);
+    }
+    15% {
+      opacity: 0.4;
+    }
+    25% {
+      opacity: 0.4;
+      transform: translate(-20px, 15px);
+    }
+    40% {
+      opacity: 0.02;
+    }
+    60% {
+      opacity: 0.02;
+      transform: translate(-80px, 60px);
+    }
+    75% {
+      opacity: 0.35;
+      transform: translate(-60px, 40px);
+    }
+    85% {
+      opacity: 0.02;
+    }
+  }
+
+  @keyframes drift-2 {
+    0%, 100% {
+      opacity: 0.02;
+      transform: translate(0, 0);
+    }
+    20% {
+      opacity: 0.02;
+    }
+    35% {
+      opacity: 0.35;
+      transform: translate(50px, -30px);
+    }
+    50% {
+      opacity: 0.02;
+      transform: translate(30px, 20px);
+    }
+    70% {
+      opacity: 0.02;
+    }
+    85% {
+      opacity: 0.3;
+      transform: translate(-40px, 50px);
+    }
+    95% {
+      opacity: 0.02;
+    }
+  }
+
+  @keyframes drift-3 {
+    0%, 100% {
+      opacity: 0.02;
+      transform: translate(0, 0);
+    }
+    10% {
+      opacity: 0.02;
+    }
+    25% {
+      opacity: 0.3;
+      transform: translate(-30px, 40px);
+    }
+    40% {
+      opacity: 0.02;
+    }
+    55% {
+      opacity: 0.02;
+      transform: translate(-70px, 20px);
+    }
+    70% {
+      opacity: 0.35;
+      transform: translate(-50px, 70px);
+    }
+    85% {
+      opacity: 0.02;
+    }
   }
 
   /* Floating Gradient Orbs */
@@ -829,16 +965,16 @@ import Layout from '../layouts/Layout.astro';
 
       if (y > height) break;
 
-      // Wave effect with time animation
-      const waveOffset = Math.sin(time * 0.001 + i * 0.1) * 20 * scale;
-      const waveOffset2 = Math.cos(time * 0.0015 + i * 0.15) * 15 * scale;
+      // Wave effect with time animation - slower, flowing right
+      const waveOffset = Math.sin(time * 0.0004 + i * 0.1) * 15 * scale;
+      const waveOffset2 = Math.cos(time * 0.0006 + i * 0.15) * 10 * scale;
 
       ctx.beginPath();
 
-      // Draw wavy line
+      // Draw wavy line - waves flow to the right
       for (let x = 0; x <= width; x += 5) {
         const xPos = (x - width / 2) * (1 + z * 0.5) + width / 2;
-        const wave = Math.sin(x * 0.01 + time * 0.002 + i * 0.2) * waveDepth * scale + waveOffset + waveOffset2;
+        const wave = Math.sin(x * 0.008 - time * 0.0008 + i * 0.2) * waveDepth * scale + waveOffset + waveOffset2;
         const yPos = y + wave;
 
         if (x === 0) {
@@ -851,41 +987,20 @@ import Layout from '../layouts/Layout.astro';
       // Gradient color based on depth
       const alpha = 0.15 + (1 - z) * 0.35;
       const hue = 240 + z * 20; // Blue to purple gradient
+
+      // Add white glow effect
+      ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
+      ctx.shadowBlur = 8 + (1 - z) * 12;
+
       ctx.strokeStyle = `hsla(${hue}, 100%, 65%, ${alpha})`;
       ctx.lineWidth = 1 + (1 - z) * 1.5;
       ctx.stroke();
+
+      // Reset shadow for next iteration
+      ctx.shadowBlur = 0;
     }
 
-    // Draw vertical grid lines
-    const verticalLines = 30;
-    for (let i = -verticalLines; i <= verticalLines; i++) {
-      ctx.beginPath();
-
-      const startZ = 0;
-      const endZ = 1;
-
-      for (let z = startZ; z <= endZ; z += 0.02) {
-        const scale = 1 - z * 0.8;
-        const x = (i * 30 * (1 + z * 0.5)) + width / 2;
-        const y = horizonY + (z * gridLines * gridSpacing * scale);
-
-        // Add wave effect to vertical lines
-        const wave = Math.sin(y * 0.01 + time * 0.002) * 10 * scale;
-
-        if (z === startZ) {
-          ctx.moveTo(x + wave, y);
-        } else {
-          ctx.lineTo(x + wave, y);
-        }
-      }
-
-      const alpha = 0.1;
-      ctx.strokeStyle = `hsla(240, 100%, 65%, ${alpha})`;
-      ctx.lineWidth = 0.5;
-      ctx.stroke();
-    }
-
-    time += 16;
+    time += 20;
     animationId = requestAnimationFrame(drawRetroWaves);
   }
 
