@@ -37,18 +37,22 @@ import Layout from '../layouts/Layout.astro';
             <a href="#services" class="btn-secondary btn-large">Explore Services</a>
           </div>
           <div class="hero-stats">
-            <div class="stats-header">In 2024<br>we generated our clients:</div>
-            <div class="stat">
-              <div class="stat-number">+1,110,042$</div>
-              <div class="stat-label">New revenue</div>
+            <div class="stats-header">
+              In 2024<br>we generated our clients:
             </div>
-            <div class="stat">
-              <div class="stat-number">+2,019</div>
-              <div class="stat-label">Sales meetings</div>
-            </div>
-            <div class="stat">
-              <div class="stat-number">+10,115,276$</div>
-              <div class="stat-label">Sales pipelines</div>
+            <div class="stats-boxes">
+              <div class="stat">
+                <div class="stat-number">+1,110,042$</div>
+                <div class="stat-label">New revenue</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">+2,019</div>
+                <div class="stat-label">Sales meetings</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">+10,115,276$</div>
+                <div class="stat-label">Sales pipelines</div>
+              </div>
             </div>
           </div>
         </div>
@@ -397,32 +401,37 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .hero-stats {
-    display: block;
     text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
     padding-top: 4rem;
   }
 
   .stats-header {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 400;
     color: var(--color-text);
     margin-bottom: 3rem;
-    line-height: 1.5;
+    line-height: 1.6;
+  }
+
+  .stats-boxes {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .stat {
-    display: inline-block;
-    vertical-align: top;
+    flex: 1;
+    max-width: 380px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 16px;
-    padding: 3rem 4rem;
-    margin: 0 1rem 2rem 1rem;
+    padding: 3rem 2rem;
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(10px);
-    min-width: 280px;
+    text-align: center;
   }
 
   .stat-number {
@@ -436,8 +445,19 @@ import Layout from '../layouts/Layout.astro';
   .stat-label {
     font-size: 1rem;
     color: var(--color-text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .stats-boxes {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stat {
+      max-width: 100%;
+      width: 100%;
+    }
   }
 
   .hero-gradient {
