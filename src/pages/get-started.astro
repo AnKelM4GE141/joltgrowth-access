@@ -64,6 +64,11 @@ import Layout from '../layouts/Layout.astro';
     background: rgba(10, 10, 10, 0.8);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-border);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-hidden {
+    transform: translateY(-100%);
   }
 
   .nav-content {
@@ -315,5 +320,23 @@ import Layout from '../layouts/Layout.astro';
   // Cleanup on page unload
   window.addEventListener('beforeunload', () => {
     cancelAnimationFrame(animationId);
+  });
+
+  // Hide nav on scroll down
+  let lastScrollY = window.scrollY;
+  const nav = document.querySelector('.nav') as HTMLElement;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      // Scrolling down and past 100px
+      nav.classList.add('nav-hidden');
+    } else {
+      // Scrolling up
+      nav.classList.remove('nav-hidden');
+    }
+
+    lastScrollY = currentScrollY;
   });
 </script>
