@@ -9,10 +9,9 @@ import Layout from '../layouts/Layout.astro';
       <div class="container">
         <div class="nav-content">
           <a href="/" class="logo">
-            <span class="logo-text">Jolt</span><span class="logo-accent">Growth</span>
+            <span class="logo-accent">JoltGrowth</span>
           </a>
           <div class="nav-links">
-            <a href="#services">Services</a>
             <a href="/advisors">Advisors</a>
             <a href="#contact" class="btn-primary">Get Started</a>
           </div>
@@ -24,7 +23,6 @@ import Layout from '../layouts/Layout.astro';
     <section class="hero">
       <div class="container">
         <div class="hero-content">
-          <div class="hero-badge">Growth Marketing Agency</div>
           <h1 class="hero-title">
             We build <span class="gradient-text">hands-off growth systems</span> for B2B leaders.
           </h1>
@@ -33,7 +31,7 @@ import Layout from '../layouts/Layout.astro';
             automated outreach, and proven lead generation systems.
           </p>
           <div class="hero-cta">
-            <a href="#contact" class="btn-primary btn-large">Start Growing Today</a>
+            <a href="/how-to-gtm" class="btn-primary btn-large">How to GTM</a>
             <a href="#services" class="btn-secondary btn-large">Explore Services</a>
           </div>
           <div class="hero-stats">
@@ -72,108 +70,389 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <!-- Fixed Background for all sections below -->
+    <div class="fixed-background">
+      <div class="background-orb orb-purple-1"></div>
+      <div class="background-orb orb-purple-2"></div>
+      <div class="background-orb orb-purple-3"></div>
+      <div class="background-stars"></div>
+    </div>
+
+    <!-- Why Most Lead Gen Agencies Suck Section -->
+    <section class="why-suck">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Services</h2>
-          <p class="section-subtitle">
-            Comprehensive growth solutions tailored to your business needs
+        <h2 class="why-suck-title">
+          Why most lead gen agencies <em>suck</em>
+        </h2>
+        <div class="why-suck-content">
+          <p>
+            99% of agencies rely on broad targeting, targeting by "persona" or "spray and pray". But the problem is today:
+          </p>
+          <p>
+            Buyers are overwhelmed with cold sales emails. Their inboxes are flooded with irrelevant junk.
+          </p>
+          <p>
+            The idea is simple, yet most don't implement it: target prospects based on the specific business pains you can solve, rather than just their job title and company.
           </p>
         </div>
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">📧</div>
-            <h3 class="service-title">Cold Email Campaigns</h3>
-            <p class="service-description">
-              High-converting email sequences that book appointments on autopilot.
-              We handle everything from copywriting to deliverability.
-            </p>
-            <ul class="service-features">
-              <li>Custom email sequences</li>
-              <li>A/B testing & optimization</li>
-              <li>Inbox placement guaranteed</li>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison">
+      <div class="container">
+        <div class="comparison-grid">
+          <!-- Left Column: What 99% Do -->
+          <div class="comparison-card comparison-problems">
+            <h3 class="comparison-card-title">What 99% of SDRS/lead gen agencies do</h3>
+            <p class="comparison-subtitle">Let's target all CFOs at manufacturing companies with 1000+ employees.</p>
+            <ul class="comparison-list">
+              <li class="comparison-item problem">
+                <span class="icon">✕</span>
+                <div>
+                  <strong>Generic Outreach:</strong> Messaging is too broad and fails to resonate with prospect's unique pain points.
+                </div>
+              </li>
+              <li class="comparison-item problem">
+                <span class="icon">✕</span>
+                <div>
+                  <strong>Missed Opportunities:</strong> You might overlook potential clients who need your help but don't fit the usual criteria.
+                </div>
+              </li>
+              <li class="comparison-item problem">
+                <span class="icon">✕</span>
+                <div>
+                  <strong>Wasted Resources:</strong> Time and effort are spent on leads that aren't interested, leading to you losing money and time.
+                </div>
+              </li>
+              <li class="comparison-item problem">
+                <span class="icon">✕</span>
+                <div>
+                  <strong>Advertising Cost Spiral:</strong> When generic cold emails fail to convert, companies panic-pivot to paid ads, and spend way too much cash on pricey PPC campaigns and inflated CPAs - a budget-draining cycle that rarely solves the core prospecting problem.
+                </div>
+              </li>
+              <li class="comparison-item problem">
+                <span class="icon">✕</span>
+                <div>
+                  <strong>Opportunity Cost Creep:</strong> While your team wastes billable hours chasing unqualified prospects, your competitors are closing deals.
+                </div>
+              </li>
             </ul>
           </div>
-          <div class="service-card featured">
-            <div class="featured-badge">Most Popular</div>
-            <div class="service-icon">🎯</div>
-            <h3 class="service-title">Lead Generation</h3>
-            <p class="service-description">
-              Targeted outreach strategies that fill your pipeline with qualified leads.
-              We identify, engage, and convert your ideal customers.
-            </p>
-            <ul class="service-features">
-              <li>Advanced audience targeting</li>
-              <li>Multi-channel outreach</li>
-              <li>CRM integration & tracking</li>
-            </ul>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">📈</div>
-            <h3 class="service-title">Growth Consulting</h3>
-            <p class="service-description">
-              Strategic guidance to scale your business sustainably.
-              Get expert insights and actionable growth plans.
-            </p>
-            <ul class="service-features">
-              <li>Growth strategy development</li>
-              <li>Funnel optimization</li>
-              <li>Performance analytics</li>
+
+          <!-- Right Column: The JoltgrowthWay -->
+          <div class="comparison-card comparison-solutions">
+            <h3 class="comparison-card-title">The "JoltgrowthWay"</h3>
+            <p class="comparison-subtitle">Let's target companies struggling with cash flow management or looking to automate their financial reporting processes.</p>
+            <ul class="comparison-list">
+              <li class="comparison-item solution">
+                <span class="icon">✓</span>
+                <div>
+                  <strong>Personalized Messaging:</strong> We speak directly to the issues your prospects face, making them more relevant and timely.
+                </div>
+              </li>
+              <li class="comparison-item solution">
+                <span class="icon">✓</span>
+                <div>
+                  <strong>Better Conversion Rates:</strong> Prospects are more likely to buy from you when they see you providing solutions to their problems (simple math).
+                </div>
+              </li>
+              <li class="comparison-item solution">
+                <span class="icon">✓</span>
+                <div>
+                  <strong>No time wasted on prospection:</strong> We target leads that really need your services, making your outreach more effective.
+                </div>
+              </li>
+              <li class="comparison-item solution">
+                <span class="icon">✓</span>
+                <div>
+                  <strong>Build Trust:</strong> Showing you understand their challenges and can solve their problem helps build trust and get them on retainers aka long-term relationships for your business.
+                </div>
+              </li>
+              <li class="comparison-item solution">
+                <span class="icon">✓</span>
+                <div>
+                  <strong>Faster Revenue Generation:</strong> By targeting only the most relevant prospects, the myoProcess Method shortens the sales cycle, helping you close deals quicker and get cash flowing faster, accelerating revenue growth.
+                </div>
+              </li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Approach Section -->
-    <section id="approach" class="approach">
+    <!-- Dream Clients Section -->
+    <section class="dream-clients">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Approach</h2>
-          <p class="section-subtitle">
-            A proven process that delivers consistent results
+        <div class="dream-clients-header">
+          <h2 class="dream-clients-title">
+            We connect you with<br>your dream clients.
+          </h2>
+          <p class="dream-clients-subtitle">
+            We win you the deals; your sales team just takes the sales calls—a lot of them. We're on track to $10,0000M in pipeline for companies this year.
           </p>
         </div>
-        <div class="approach-steps">
-          <div class="step">
-            <div class="step-number">01</div>
-            <h3 class="step-title">Discover & Analyze</h3>
-            <p class="step-description">
-              We dive deep into your business, audience, and goals to create a custom growth strategy.
+
+        <div class="email-mockup">
+          <img src="/email-inbox.png" alt="Email inbox showing multiple booked leads" class="mockup-image" />
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-item">
+            <h3 class="feature-title">Pain-focused offer refinement</h3>
+            <p class="feature-description">
+              We build your offer using industry-specific language and tone that resonate with your prospects' pain points. We then align your offer to address these pain points directly, ensuring your investment drives real revenue growth and tangible returns. No fluff.
             </p>
           </div>
-          <div class="step">
-            <div class="step-number">02</div>
-            <h3 class="step-title">Build & Launch</h3>
-            <p class="step-description">
-              We develop and deploy campaigns with precision, ensuring every element is optimized for success.
+          <div class="feature-item">
+            <h3 class="feature-title">Targeted leads with real Interest</h3>
+            <p class="feature-description">
+              We fill your pipeline with leads that are actually interested in your service/product. We use "pain sniffing" to identify real prospect pains and then reaching out to offer specific solutions for their specific problem.
             </p>
           </div>
-          <div class="step">
-            <div class="step-number">03</div>
-            <h3 class="step-title">Optimize & Scale</h3>
-            <p class="step-description">
-              Continuous testing and refinement to maximize ROI and scale your growth exponentially.
+          <div class="feature-item">
+            <h3 class="feature-title">Streamlined sales process</h3>
+            <p class="feature-description">
+              Our team handles the "boring stuff" of systematic sales. As meetings begin to flow in, we'll help you refine offer. We also give you access to a personalized board that auto-populates with "meeting-ready" prospects along with instant notifications to your Slack to minimize response time.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section id="contact" class="cta">
+    <!-- Case Studies Section -->
+    <section class="case-studies">
       <div class="container">
-        <div class="cta-content">
-          <h2 class="cta-title">Ready to Accelerate Your Growth?</h2>
-          <p class="cta-subtitle">
-            Join hundreds of businesses that trust JoltGrowth to drive their success.
-            Get started today with a free consultation.
-          </p>
-          <div class="cta-actions">
-            <a href="mailto:hello@joltgrowth.biz" class="btn-primary btn-large">Schedule a Call</a>
-            <p class="cta-note">No commitment required • Free strategy session</p>
+        <h2 class="case-studies-title">Case Study Results Using Our Proven System</h2>
+
+        <div class="case-study-list">
+          <!-- Case Study 1 -->
+          <div class="case-study">
+            <div class="case-study-visual">
+              <div class="visual-card">
+                <div class="visual-stats">
+                  <div class="stat-item">
+                    <span class="stat-label">New Pipeline Revenue</span>
+                    <span class="stat-value">$145,000</span>
+                  </div>
+                </div>
+                <div class="visual-number">$145,000</div>
+                <div class="visual-subtitle">Sales Pipeline added/month</div>
+              </div>
+            </div>
+            <div class="case-study-content">
+              <span class="upgrade-badge">Upgrade</span>
+              <h3 class="case-study-heading">+$145k in new revenue added in 6 months.</h3>
+              <p class="case-study-description">
+                We secured seven new major partnerships for our client, resulting in over $145,888 in revenue.
+              </p>
+              <ul class="case-study-checklist">
+                <li>✓ We Setup & Launched Our Campaigns + Split Testing</li>
+                <li>✓ Meetings started to roll in more and more</li>
+                <li>✓ More deals closed and equipment orders fulfilled than ever before</li>
+              </ul>
+            </div>
           </div>
+
+          <!-- Case Study 2 -->
+          <div class="case-study reverse">
+            <div class="case-study-content">
+              <span class="upgrade-badge">Upgrade</span>
+              <h3 class="case-study-heading">+$85k in new revenue added in 3 months.</h3>
+              <p class="case-study-description">
+                Our client went from operating locally to operating globally. We were able to get them a meeting with Indeed.
+              </p>
+              <ul class="case-study-checklist">
+                <li>✓ We Setup & Launched Our Campaigns + Split Testing</li>
+                <li>✓ Appointments started to flow like never before</li>
+                <li>✓ More deals closed and candidates placed than ever before</li>
+              </ul>
+            </div>
+            <div class="case-study-visual">
+              <div class="visual-card">
+                <div class="visual-stats">
+                  <div class="stat-item">
+                    <span class="stat-label">New Pipeline Revenue</span>
+                    <span class="stat-value">$ 85,000</span>
+                  </div>
+                </div>
+                <div class="visual-number">$85,000</div>
+                <div class="visual-subtitle">Sales Pipeline added/month</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case Study 3 -->
+          <div class="case-study">
+            <div class="case-study-visual">
+              <div class="visual-card">
+                <div class="visual-stats">
+                  <div class="stat-item">
+                    <span class="stat-label">New Pipeline Revenue</span>
+                    <span class="stat-value">$ 70,000</span>
+                  </div>
+                </div>
+                <div class="visual-number">$70,000</div>
+                <div class="visual-subtitle">Sales Pipeline added/month</div>
+              </div>
+            </div>
+            <div class="case-study-content">
+              <span class="upgrade-badge">Upgrade</span>
+              <h3 class="case-study-heading">+$70k in new revenue added in 3 months.</h3>
+              <p class="case-study-description">
+                ForPlayers was able to raise prices and add over $70,000 in revenue
+              </p>
+              <ul class="case-study-checklist">
+                <li>✓ We Setup & Launched Our Campaigns + Split Testing</li>
+                <li>✓ The first meeting turned into two, then four, then eight....</li>
+                <li>✓ More sponsors & partners signed than ever before</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ingredients Section -->
+    <section class="ingredients">
+      <div class="container">
+        <div class="ingredients-grid">
+          <div class="ingredients-content">
+            <h2 class="ingredients-title">Here are the ingredients that make up our system:</h2>
+
+            <div class="ingredient-item">
+              <h3 class="ingredient-heading">1. We use AI carefully, to fill in the blanks.</h3>
+              <p class="ingredient-text">
+                AI is terrible at writing entire emails, and people can easily detect when it's used. But, AI is great at writing tightly-constrained variables. We place these variables inside thoughtful templates written by humans, ensuring that each email feels personal and unique.
+              </p>
+            </div>
+
+            <div class="ingredient-item">
+              <h3 class="ingredient-heading">2. We target by pain, not persona.</h3>
+              <p class="ingredient-text">
+                We'll scour the internet to find buyers that actually have the pain your product solves (ex. open job roles, customer reviews, company news, job changes, and more). Then, we reach out to them with our aligned offer.
+              </p>
+            </div>
+
+            <div class="ingredient-item">
+              <h3 class="ingredient-heading">3. We give you a single control center for >75 inboxes</h3>
+              <p class="ingredient-text">
+                Gone are the volume bottlenecks of 1 SDR = 1 inbox. When you work with us, you send at whatever scale you'd like to send at.
+              </p>
+            </div>
+          </div>
+
+          <div class="ingredients-visual">
+            <div class="phone-mockup">
+              <img src="/phone-email.png" alt="Email mockup on phone" class="phone-image" />
+            </div>
+            <div class="floating-orb orb-blue-1"></div>
+            <div class="floating-orb orb-blue-2"></div>
+            <div class="floating-orb orb-purple-1"></div>
+            <div class="floating-orb orb-purple-2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table Section -->
+    <section class="comparison-table">
+      <div class="container">
+        <h2 class="comparison-table-title">Let's compare your options</h2>
+
+        <div class="table-wrapper">
+          <table class="options-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>⚡ Joltgrowth</th>
+                <th>Hiring an SDR</th>
+                <th>Marketing Agency</th>
+                <th>Do It Yourself</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-dark">
+                <td class="row-label">Time to get results</td>
+                <td>21-30 Days</td>
+                <td>3 Months</td>
+                <td>2-4 Weeks</td>
+                <td>3-6 Months</td>
+              </tr>
+              <tr>
+                <td class="row-label">Failure rate</td>
+                <td>Unlikely</td>
+                <td>Medium</td>
+                <td>High</td>
+                <td>Very High</td>
+              </tr>
+              <tr class="row-dark">
+                <td class="row-label">Price</td>
+                <td>Based On Results</td>
+                <td>+$8,000/month</td>
+                <td>+$5K+ Media Buying Budget</td>
+                <td>$3K For Software, Tools + Time Wasted</td>
+              </tr>
+              <tr>
+                <td class="row-label">Guarantees</td>
+                <td><span class="guarantee-badge success">✓</span></td>
+                <td><span class="guarantee-badge fail">✕</span></td>
+                <td>Rarely</td>
+                <td><span class="guarantee-badge fail">✕</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+      <div class="container">
+        <h2 class="pricing-title">Your investment</h2>
+
+        <div class="pricing-grid">
+          <!-- Standard Plan -->
+          <div class="pricing-card">
+            <h3 class="pricing-plan-name">Standard</h3>
+            <div class="pricing-amount">
+              <span class="price">$8658</span><span class="period">/month</span>
+            </div>
+            <a href="#contact" class="pricing-button btn-light">Get started today</a>
+            <ul class="pricing-features">
+              <li>5 Ideal clients in 6 months guaranteed</li>
+              <li>Ad-hoc sales system build.</li>
+              <li>We get started within 24h & handle everything</li>
+              <li>Expand to new markets.</li>
+            </ul>
+          </div>
+
+          <!-- Annual Plan -->
+          <div class="pricing-card pricing-card-featured">
+            <h3 class="pricing-plan-name">Commit to 12 months & save $20,408</h3>
+            <div class="pricing-amount">
+              <span class="price">$83,488</span><span class="period">/year</span>
+            </div>
+            <a href="#contact" class="pricing-button btn-gradient">Get started today</a>
+            <ul class="pricing-features">
+              <li>5 Ideal clients in 6 months guaranteed</li>
+              <li>Ad-hoc sales system build.</li>
+              <li>We get started within 24h & handle everything</li>
+              <li>Expand to new markets.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+      <div class="container">
+        <div class="final-cta-content">
+          <h2 class="final-cta-title">
+            Should we begin systematic growth today or wait until FOMO creeps in?
+          </h2>
+          <a href="#contact" class="final-cta-button">Get started</a>
         </div>
       </div>
     </section>
@@ -184,7 +463,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="footer-content">
           <div class="footer-brand">
             <a href="/" class="logo">
-              <span class="logo-text">Jolt</span><span class="logo-accent">Growth</span>
+              <span class="logo-accent">JoltGrowth</span>
             </a>
             <p class="footer-tagline">Accelerating business growth worldwide.</p>
           </div>
@@ -252,6 +531,9 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1.5rem;
     font-weight: 700;
     font-family: var(--font-body);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
   }
 
   .logo-text {
@@ -260,6 +542,11 @@ import Layout from '../layouts/Layout.astro';
 
   .logo-accent {
     color: var(--color-accent);
+  }
+
+  .logo-bolt {
+    color: var(--color-accent);
+    font-size: 1.25rem;
   }
 
   .nav-links {
@@ -407,8 +694,9 @@ import Layout from '../layouts/Layout.astro';
 
   .stats-header {
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     font-weight: 400;
+    font-family: var(--font-serif);
     color: var(--color-text);
     margin-bottom: 3rem;
     line-height: 1.6;
@@ -425,20 +713,21 @@ import Layout from '../layouts/Layout.astro';
 
   .stat {
     width: 380px;
+    flex-shrink: 0;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
-    padding: 3.5rem 3rem;
+    padding: 1.25rem 2rem;
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(10px);
     text-align: center;
   }
 
   .stat-number {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     font-family: var(--font-serif);
     color: var(--color-text);
-    margin-bottom: 1rem;
+    margin-bottom: 0.3rem;
   }
 
   .stat-label {
@@ -701,6 +990,813 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 
+  /* Fixed Background */
+  .fixed-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .background-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+  }
+
+  .orb-purple-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.4) 0%, transparent 70%);
+    top: 20%;
+    left: 10%;
+    animation: float-orb 20s ease-in-out infinite;
+  }
+
+  .orb-purple-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+    top: 60%;
+    right: 15%;
+    animation: float-orb 25s ease-in-out infinite reverse;
+  }
+
+  .orb-purple-3 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, transparent 70%);
+    bottom: 10%;
+    left: 50%;
+    animation: float-orb 30s ease-in-out infinite;
+    animation-delay: -10s;
+  }
+
+  @keyframes float-orb {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+      transform: translate(-30px, 30px) scale(0.9);
+    }
+  }
+
+  .background-stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+      radial-gradient(1px 1px at 15% 23%, rgba(255, 255, 255, 0.7), transparent),
+      radial-gradient(2px 2px at 78% 12%, rgba(255, 255, 255, 0.6), transparent),
+      radial-gradient(1px 1px at 42% 67%, rgba(255, 255, 255, 0.5), transparent),
+      radial-gradient(1px 1px at 89% 45%, rgba(255, 255, 255, 0.6), transparent),
+      radial-gradient(1px 1px at 23% 89%, rgba(255, 255, 255, 0.5), transparent),
+      radial-gradient(1px 1px at 67% 14%, rgba(255, 255, 255, 0.6), transparent),
+      radial-gradient(1px 1px at 34% 12%, rgba(255, 255, 255, 0.5), transparent),
+      radial-gradient(1px 1px at 91% 78%, rgba(255, 255, 255, 0.6), transparent),
+      radial-gradient(1px 1px at 12% 56%, rgba(255, 255, 255, 0.5), transparent),
+      radial-gradient(1px 1px at 83% 61%, rgba(255, 255, 255, 0.6), transparent),
+      radial-gradient(1px 1px at 28% 41%, rgba(255, 255, 255, 0.5), transparent),
+      radial-gradient(1px 1px at 9% 73%, rgba(255, 255, 255, 0.6), transparent),
+      radial-gradient(1px 1px at 94% 87%, rgba(255, 255, 255, 0.5), transparent),
+      radial-gradient(1px 1px at 18% 94%, rgba(255, 255, 255, 0.6), transparent);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+  }
+
+  /* Why Most Lead Gen Agencies Suck Section */
+  .why-suck {
+    padding: 6rem 0;
+    background: transparent;
+    position: relative;
+  }
+
+  .why-suck-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 3rem;
+    max-width: 900px;
+  }
+
+  .why-suck-title em {
+    font-style: italic;
+    color: var(--color-text);
+  }
+
+  .why-suck-content {
+    max-width: 800px;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-text);
+  }
+
+  .why-suck-content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .why-suck-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Comparison Section */
+  .comparison {
+    padding: 6rem 0;
+    background: transparent;
+    position: relative;
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .comparison-card {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 3rem;
+  }
+
+  .comparison-problems {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .comparison-solutions {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(79, 70, 229, 0.1) 100%);
+  }
+
+  .comparison-card-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-serif);
+  }
+
+  .comparison-subtitle {
+    font-size: 1rem;
+    color: var(--color-text);
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .comparison-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .comparison-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .comparison-item .icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+
+  .comparison-item.problem .icon {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+  }
+
+  .comparison-item.solution .icon {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+  }
+
+  .comparison-item div {
+    flex: 1;
+    line-height: 1.6;
+    color: var(--color-text);
+  }
+
+  .comparison-item strong {
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  @media (max-width: 968px) {
+    .comparison-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Dream Clients Section */
+  .dream-clients {
+    padding: 6rem 0;
+    background: transparent;
+    position: relative;
+  }
+
+  .dream-clients-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+
+  .dream-clients-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.2;
+  }
+
+  .dream-clients-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text);
+    line-height: 1.8;
+  }
+
+  .email-mockup {
+    margin-bottom: 4rem;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.2);
+  }
+
+  .mockup-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.2);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .feature-item {
+    text-align: left;
+  }
+
+  .feature-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: var(--font-display);
+  }
+
+  .feature-description {
+    color: var(--color-text);
+    line-height: 1.8;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 968px) {
+    .dream-clients-header {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  /* Case Studies Section */
+  .case-studies {
+    padding: 6rem 0;
+    background: transparent;
+    position: relative;
+  }
+
+  .case-studies-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .case-study-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .case-study {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 3rem;
+  }
+
+  .case-study.reverse {
+    direction: rtl;
+  }
+
+  .case-study.reverse > * {
+    direction: ltr;
+  }
+
+  .case-study-visual {
+    position: relative;
+  }
+
+  .visual-card {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(168, 85, 247, 0.2) 100%);
+    border-radius: 16px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .visual-stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    opacity: 0.7;
+  }
+
+  .stat-value {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .visual-number {
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: var(--font-serif);
+    color: var(--color-text);
+    text-align: center;
+    margin: 2rem 0 0.5rem;
+  }
+
+  .visual-subtitle {
+    text-align: center;
+    color: var(--color-text);
+    font-size: 0.875rem;
+    padding-top: 0.5rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    margin: 0 auto;
+    max-width: 200px;
+  }
+
+  .case-study-content {
+    position: relative;
+  }
+
+  .upgrade-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 2rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .upgrade-badge::before {
+    content: "⚡";
+  }
+
+  .case-study-heading {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+  }
+
+  .case-study-description {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .case-study-checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .case-study-checklist li {
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 968px) {
+    .case-study,
+    .case-study.reverse {
+      grid-template-columns: 1fr;
+      direction: ltr;
+    }
+  }
+
+  /* Ingredients Section */
+  .ingredients {
+    padding: 6rem 0;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ingredients-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .ingredients-content {
+    z-index: 2;
+    position: relative;
+  }
+
+  .ingredients-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 3rem;
+    line-height: 1.3;
+  }
+
+  .ingredient-item {
+    margin-bottom: 3rem;
+  }
+
+  .ingredient-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .ingredient-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+  }
+
+  .ingredient-text {
+    color: var(--color-text);
+    line-height: 1.8;
+    font-size: 1rem;
+  }
+
+  .ingredients-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+  }
+
+  .phone-mockup {
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+  }
+
+  .phone-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.6;
+    animation: float-slow 8s ease-in-out infinite;
+  }
+
+  .orb-blue-1 {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  .orb-blue-2 {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #2563eb 0%, transparent 70%);
+    bottom: 30%;
+    left: 5%;
+    animation-delay: 2s;
+  }
+
+  .orb-purple-1 {
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, #d946ef 0%, transparent 70%);
+    top: 15%;
+    right: 15%;
+    animation-delay: 1s;
+  }
+
+  .orb-purple-2 {
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, #a855f7 0%, transparent 70%);
+    bottom: 20%;
+    right: 10%;
+    animation-delay: 3s;
+  }
+
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    25% {
+      transform: translate(10px, -10px) scale(1.05);
+    }
+    50% {
+      transform: translate(-10px, 10px) scale(0.95);
+    }
+    75% {
+      transform: translate(5px, 5px) scale(1.02);
+    }
+  }
+
+  @media (max-width: 968px) {
+    .ingredients-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .ingredients-visual {
+      min-height: 500px;
+    }
+  }
+
+  /* Comparison Table Section */
+  .comparison-table {
+    padding: 6rem 0;
+    background: transparent;
+    position: relative;
+  }
+
+  .comparison-table-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .options-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .options-table thead tr {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .options-table th {
+    padding: 1.5rem 2rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--color-text);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+  }
+
+  .options-table th:first-child {
+    text-align: left;
+  }
+
+  .options-table tbody tr {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .options-table tbody tr.row-dark {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .options-table td {
+    padding: 1.5rem 2rem;
+    text-align: center;
+    color: var(--color-text);
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .options-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .options-table td.row-label {
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .guarantee-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 40px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  .guarantee-badge.success {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+  }
+
+  .guarantee-badge.fail {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+  }
+
+  @media (max-width: 968px) {
+    .options-table {
+      font-size: 0.875rem;
+    }
+
+    .options-table th,
+    .options-table td {
+      padding: 1rem;
+    }
+
+    .guarantee-badge {
+      width: 60px;
+      height: 35px;
+      font-size: 1rem;
+    }
+  }
+
+  /* Pricing Section */
+  .pricing {
+    padding: 6rem 0;
+    background: transparent;
+    position: relative;
+  }
+
+  .pricing-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .pricing-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pricing-card-featured {
+    background: linear-gradient(135deg, rgba(15, 32, 39, 0.8) 0%, rgba(32, 58, 67, 0.6) 100%);
+    border-color: rgba(99, 102, 241, 0.3);
+  }
+
+  .pricing-plan-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: var(--font-display);
+  }
+
+  .pricing-amount {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .pricing-amount .price {
+    font-size: 3.5rem;
+    font-weight: 700;
+    font-family: var(--font-serif);
+    color: var(--color-text);
+  }
+
+  .pricing-amount .period {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+  }
+
+  .pricing-button {
+    display: block;
+    text-align: center;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+
+  .btn-light {
+    background: rgba(255, 255, 255, 0.9);
+    color: #0a0a0a;
+  }
+
+  .btn-light:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+  }
+
+  .btn-gradient {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    color: white;
+  }
+
+  .btn-gradient:hover {
+    background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+  }
+
+  .pricing-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .pricing-features li {
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  .pricing-features li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-text-secondary);
+  }
+
+  @media (max-width: 968px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
   /* Services Section */
   .services {
     padding: 8rem 0;
@@ -841,7 +1937,8 @@ import Layout from '../layouts/Layout.astro';
   /* CTA Section */
   .cta {
     padding: 8rem 0;
-    background: var(--color-bg-secondary);
+    background: transparent;
+    position: relative;
   }
 
   .cta-content {
@@ -872,6 +1969,46 @@ import Layout from '../layouts/Layout.astro';
   .cta-note {
     font-size: 0.875rem;
     color: var(--color-text-secondary);
+  }
+
+  /* Final CTA Section */
+  .final-cta {
+    padding: 8rem 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #0f2027 50%, #203a43 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .final-cta-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 3rem;
+    line-height: 1.3;
+  }
+
+  .final-cta-button {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .final-cta-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   }
 
   /* Footer */

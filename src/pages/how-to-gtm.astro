@@ -1,0 +1,582 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="How To GTM - JoltGrowth">
+  <main>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="container">
+        <div class="nav-content">
+          <a href="/" class="logo">
+            <span class="logo-accent">JoltGrowth</span>
+          </a>
+          <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/advisors">Advisors</a>
+            <a href="/#contact" class="btn-primary">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gtm-hero">
+      <div class="container">
+        <div class="gtm-hero-content">
+          <h1 class="gtm-hero-title">
+            Master Your <span class="gradient-text">Go-To-Market</span> Strategy
+          </h1>
+          <p class="gtm-hero-subtitle">
+            The Antifragile GTM Thesis
+          </p>
+        </div>
+      </div>
+
+      <!-- Retro Waves -->
+      <div class="retro-waves">
+        <canvas id="retro-wave-canvas"></canvas>
+      </div>
+
+    </section>
+
+    <!-- Hook Section -->
+    <section class="hook-section">
+      <div class="container">
+        <div class="hook-content">
+          <h2 class="hook-statement">
+            Most fail going to market before they start.
+          </h2>
+          <div class="limiting-beliefs">
+            <p class="belief-text">
+              You can get it done right, fast, or cheap, but you can only get two of those.
+            </p>
+            <p class="belief-text">
+              Most people end up wanting to do all three and, in doing so, they sacrifice a little bit of each of them.
+            </p>
+            <p class="belief-text">
+              They actually have cost overruns, mistakes made because of disorder, and it takes super long to do that.
+            </p>
+            <p class="our-approach">
+              So what we like to do is get it done right and fast the first time. We recognize how money is super abundant to those who actually have good skills, who can get shit done, and who have good ideas. We live in the United States.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thesis Section -->
+    <section class="thesis-section">
+      <div class="container">
+        <div class="thesis-content">
+          <!-- Video Container -->
+          <div class="video-container">
+            <div class="video-wrapper">
+              <!-- Placeholder for video - replace with actual video embed -->
+              <div class="video-placeholder">
+                <div class="play-button">▶</div>
+                <div class="video-caption">
+                  <p>our thesis</p>
+                  <p>Pain first</p>
+                  <p>GTM</p>
+                </div>
+              </div>
+            </div>
+            <h3 class="video-title">Our Thesis: Painfully Abundant GTM</h3>
+          </div>
+
+          <!-- Thesis Content -->
+          <div class="thesis-main">
+            <p class="thesis-intro">
+              When you go to market, you need to have a painful abundance to you - i.e., you need to get rid of all of your limiting beliefs about money and whatever, and just see people for where they are, what they're out there pain is, and what they're willing to pay for the product that they really want (the best of the best, the cream of the crop). If money was no object and they could build a service that just solves all their problems, what would they have? Creating and seeing that's the painfully abundant thesis where we start our strategies from, rather than a marketing agency or something else which is about keeping costs low. What if we could spend the most money we could possibly spend because money is cheap? If we could just get a loan for the money and that's all we needed to do, then 100% we would do it because it would clearly solve all of our problems and it would have no risk of making us 10x-100x our investment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+</Layout>
+
+<style>
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Navigation */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-body);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .logo-accent {
+    color: var(--color-accent);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:not(.btn-primary):hover {
+    color: var(--color-accent-light);
+  }
+
+  /* Buttons */
+  .btn-primary,
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--color-accent);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    border: 2px solid var(--color-border);
+    color: var(--color-text);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  /* GTM Hero Section */
+  .gtm-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    overflow: hidden;
+    background: var(--color-bg);
+  }
+
+
+  .gtm-hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  .gtm-hero-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .gradient-text {
+    background: linear-gradient(
+      90deg,
+      var(--color-accent) 0%,
+      var(--color-accent-light) 25%,
+      #a5b4fc 50%,
+      var(--color-accent-light) 75%,
+      var(--color-accent) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 8s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  .gtm-hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .gtm-hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Retro Waves */
+  .retro-waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #retro-wave-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .wave-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(10, 10, 10, 0.8) 100%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Ambient Orbs */
+  .ambient-orbs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .ambient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+  }
+
+  .orb-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+    top: 10%;
+    right: 10%;
+    animation: float-ambient 15s ease-in-out infinite;
+  }
+
+  .orb-2 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+    bottom: 20%;
+    left: 15%;
+    animation: float-ambient 20s ease-in-out infinite;
+    animation-delay: -5s;
+  }
+
+  .orb-3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.18) 0%, transparent 70%);
+    top: 40%;
+    left: 5%;
+    animation: float-ambient 18s ease-in-out infinite;
+    animation-delay: -10s;
+  }
+
+  @keyframes float-ambient {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.3;
+    }
+    25% {
+      transform: translate(30px, -30px) scale(1.1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: translate(-20px, 40px) scale(0.9);
+      opacity: 0.4;
+    }
+    75% {
+      transform: translate(40px, 20px) scale(1.05);
+      opacity: 0.6;
+    }
+  }
+
+  /* Hook Section */
+  .hook-section {
+    padding: 4rem 0;
+    background: var(--color-bg-secondary);
+    position: relative;
+  }
+
+
+  .hook-content {
+    max-width: 900px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hook-statement {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 3rem;
+    line-height: 1.3;
+    color: var(--color-text);
+  }
+
+  .limiting-beliefs {
+    max-width: 800px;
+  }
+
+  .belief-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .our-approach {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-top: 2rem;
+    font-weight: 500;
+  }
+
+  /* Thesis Section */
+  .thesis-section {
+    padding: 4rem 0;
+    background: var(--color-bg);
+    position: relative;
+  }
+
+
+  .thesis-content {
+    max-width: 900px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Video Container (YouTube style) */
+  .video-container {
+    margin-bottom: 3rem;
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  .video-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    color: var(--color-text-secondary);
+  }
+
+  .play-button {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .play-button:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+  }
+
+  .video-caption {
+    text-align: center;
+  }
+
+  .video-caption p {
+    margin: 0.25rem 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .video-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.4;
+    font-family: var(--font-display);
+  }
+
+  .thesis-intro {
+    font-size: 1.125rem;
+    color: var(--color-text);
+    font-weight: 500;
+    line-height: 1.8;
+  }
+
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+      gap: 1rem;
+    }
+
+    .nav-links a:not(.btn-primary) {
+      display: none;
+    }
+
+  }
+</style>
+
+<script>
+  // Retro Wave Animation
+  const canvas = document.getElementById('retro-wave-canvas') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d')!;
+
+  let animationId: number;
+  let time = 0;
+
+  function resizeCanvas() {
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * window.devicePixelRatio;
+    canvas.height = rect.height * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+
+  function drawRetroWaves() {
+    const width = canvas.width / window.devicePixelRatio;
+    const height = canvas.height / window.devicePixelRatio;
+
+    // Clear canvas
+    ctx.clearRect(0, 0, width, height);
+
+    // Perspective settings
+    const horizonY = height * 0.4; // Horizon line position
+    const gridLines = 40;
+    const gridSpacing = 30;
+    const waveDepth = 25; // Depth of perspective
+
+    // Draw horizontal grid lines (waves)
+    for (let i = 0; i < gridLines; i++) {
+      const z = i / gridLines;
+      const scale = 1 - z * 0.8; // Perspective scaling
+      const y = horizonY + (i * gridSpacing * scale);
+
+      if (y > height) break;
+
+      // Wave effect with time animation - slower, flowing right
+      const waveOffset = Math.sin(time * 0.0004 + i * 0.1) * 15 * scale;
+      const waveOffset2 = Math.cos(time * 0.0006 + i * 0.15) * 10 * scale;
+
+      ctx.beginPath();
+
+      // Draw wavy line - waves flow to the right
+      for (let x = 0; x <= width; x += 5) {
+        const xPos = (x - width / 2) * (1 + z * 0.5) + width / 2;
+        const wave = Math.sin(x * 0.008 - time * 0.0008 + i * 0.2) * waveDepth * scale + waveOffset + waveOffset2;
+        const yPos = y + wave;
+
+        if (x === 0) {
+          ctx.moveTo(xPos, yPos);
+        } else {
+          ctx.lineTo(xPos, yPos);
+        }
+      }
+
+      // Gradient color based on depth
+      const alpha = 0.15 + (1 - z) * 0.35;
+      const hue = 240 + z * 20; // Blue to purple gradient
+
+      ctx.strokeStyle = `hsla(${hue}, 100%, 65%, ${alpha})`;
+      ctx.lineWidth = 1 + (1 - z) * 1.5;
+      ctx.stroke();
+    }
+
+    time += 20;
+    animationId = requestAnimationFrame(drawRetroWaves);
+  }
+
+  // Initialize
+  resizeCanvas();
+  drawRetroWaves();
+
+  // Handle resize
+  window.addEventListener('resize', () => {
+    resizeCanvas();
+  });
+
+  // Cleanup on page unload
+  window.addEventListener('beforeunload', () => {
+    cancelAnimationFrame(animationId);
+  });
+</script>
