@@ -14,6 +14,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="nav-links">
             <a href="/">Home</a>
             <a href="/advisors">Advisors</a>
+            <a href="/blog">Blog</a>
             <a href="/get-started" class="btn-primary">Get Started</a>
           </div>
         </div>
@@ -29,22 +30,13 @@ import Layout from '../layouts/Layout.astro';
         <p class="hero-subtitle">
           Choose the path that accelerates your growth
         </p>
-      </div>
 
-      <!-- Retro Waves -->
-      <div class="retro-waves">
-        <canvas id="retro-wave-canvas"></canvas>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services-section">
-      <div class="container">
+        <!-- Services Grid -->
         <div class="services-grid">
           <!-- Service 1: Acquisition Consulting -->
           <div class="service-card" data-expandable>
             <div class="service-image roman-1">
-              <div class="roman-icon">⚔️</div>
+              <div class="roman-icon">🤴</div>
               <div class="roman-overlay"></div>
             </div>
             <div class="service-content">
@@ -105,6 +97,11 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Retro Waves -->
+      <div class="retro-waves">
+        <canvas id="retro-wave-canvas"></canvas>
       </div>
     </section>
 
@@ -201,7 +198,7 @@ import Layout from '../layouts/Layout.astro';
   /* Hero Section */
   .hero {
     position: relative;
-    min-height: 60vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     padding-top: 80px;
@@ -213,10 +210,10 @@ import Layout from '../layouts/Layout.astro';
   .hero-content {
     position: relative;
     z-index: 10;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-    padding: 4rem 2rem;
+    padding: 3rem 2rem 4rem;
     width: 100%;
   }
 
@@ -256,8 +253,7 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-text-secondary);
     line-height: 1.8;
     max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 3rem;
   }
 
   /* Retro Waves */
@@ -276,12 +272,6 @@ import Layout from '../layouts/Layout.astro';
     width: 100%;
     height: 100%;
     display: block;
-  }
-
-  /* Services Section */
-  .services-section {
-    padding: 6rem 0 4rem;
-    background: var(--color-bg);
   }
 
   .services-grid {
@@ -332,19 +322,19 @@ import Layout from '../layouts/Layout.astro';
 
   /* Roman-inspired backgrounds */
   .roman-1 {
-    background: linear-gradient(135deg, #8B4513 0%, #D4AF37 50%, #8B4513 100%);
+    background: linear-gradient(135deg, #A9A9A9 0%, #E8E8E8 50%, #A9A9A9 100%);
   }
 
   .roman-2 {
-    background: linear-gradient(135deg, #CD7F32 0%, #FFD700 50%, #CD7F32 100%);
+    background: linear-gradient(135deg, #B0B0B0 0%, #D3D3D3 50%, #B0B0B0 100%);
   }
 
   .roman-3 {
-    background: linear-gradient(135deg, #654321 0%, #C0C0C0 50%, #654321 100%);
+    background: linear-gradient(135deg, #949494 0%, #C0C0C0 50%, #949494 100%);
   }
 
   .roman-4 {
-    background: linear-gradient(135deg, #DAA520 0%, #FFA500 50%, #DAA520 100%);
+    background: linear-gradient(135deg, #A9A9A9 0%, #BEBEBE 50%, #A9A9A9 100%);
   }
 
   .roman-overlay {
